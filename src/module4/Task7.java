@@ -69,6 +69,19 @@ public class Task7 {
             return b;
     }
 
+    //Задача 5
+
+    public static String recursionCount(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите число, до которого нужно считать");
+        int x = sc.nextInt();
+
+        if (x <= 1) {
+            return "1";
+        }
+        return recursionCount(x - 1) + "\n" + x;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Какую задачу вы хотите решить? Введите число от 1 до 6:");
@@ -83,6 +96,10 @@ public class Task7 {
                 System.out.println(drawSquare());
             } else if (a == 4) {
                 System.out.println(getMaxInt());
+            } else if (a == 5) {
+                System.out.println(recursionCount());
+            } else if (a == 6) {
+                System.out.println();
             } else {
                 System.out.println("Вы ввели неверное значение. Перезапустите программу и попробуйте снова.");
             }

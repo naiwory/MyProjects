@@ -55,11 +55,22 @@ public class Main {
 
     //Задание 5
 
-    public static void recursionCount(int x){
-        if(x < 1){
-            
+    public static String recursionCount(int x){
+        if (x <= 1) {
+            return "1";
         }
+        return recursionCount(x - 1) + "\n" + x;
+    }
 
+    //Задание 6
+
+    public static String recursionDrawRectangle(int width, int height){
+        if(width <= 1){
+            return "+";
+        }if(height <= 1){
+            return "+";
+        }
+        return recursionDrawRectangle();
     }
 
     public static void main(String[] args) {
@@ -68,5 +79,6 @@ public class Main {
         System.out.println(drawRectangle(4));
         System.out.println(getMax(100, 5));
         System.out.println(getMax(4.5F, 7.8F));
+        System.out.println(recursionCount(5));
     }
 }
