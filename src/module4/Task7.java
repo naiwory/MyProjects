@@ -71,24 +71,29 @@ public class Task7 {
 
     //Задача 5
 
-    public static String recursionCount(){
+    /*public static String recursionCount(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Введите число, до которого нужно считать");
+        System.out.println("Введите число, до которого нужно считать:");
         int x = sc.nextInt();
 
         if (x <= 1) {
             return "1";
         }
         return recursionCount(x - 1) + "\n" + x;
-    }
+    }*/
+
+    //Задача 6
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Какую задачу вы хотите решить? Введите число от 1 до 6:");
-        int a = sc.nextInt();
 
-        for(int i = 0; i <= 6; i++) {
-            if (a == 1) {
+        while(true) {
+            System.out.println("Какую задачу вы хотите решить? Введите число от 1 до 6. Если вы больше не хотите решать задачи, введите 0:");
+            int a = sc.nextInt();
+
+            if(a == 0){
+                break;
+            }else if (a == 1) {
                 count();
             } else if (a == 2) {
                 System.out.println(drawRectangle());
@@ -97,12 +102,13 @@ public class Task7 {
             } else if (a == 4) {
                 System.out.println(getMaxInt());
             } else if (a == 5) {
-                System.out.println(recursionCount());
+                System.out.println();
             } else if (a == 6) {
                 System.out.println();
             } else {
                 System.out.println("Вы ввели неверное значение. Перезапустите программу и попробуйте снова.");
             }
+
         }
     }
 }

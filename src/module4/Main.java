@@ -64,14 +64,14 @@ public class Main {
 
     //Задание 6
 
-    public static String recursionDrawRectangle(int width, int height){
+    /*public static String recursionDrawRectangle(int width, int height){
         if(width <= 1){
             return "+";
         }if(height <= 1){
             return "+";
         }
         return recursionDrawRectangle();
-    }
+    }*/
 
     public static void main(String[] args) {
         count(5);
