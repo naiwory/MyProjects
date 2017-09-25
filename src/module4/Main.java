@@ -62,7 +62,7 @@ public class Main {
         return recursionCount(x - 1) + "\n" + x;
     }
 
-    //Задание 6
+    //Задание 6 (не до конца решено)
 
     public static String recursionDrawRectangle(int width, int height){
         if(width <= 1){

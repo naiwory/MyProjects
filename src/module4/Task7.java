@@ -78,7 +78,7 @@ public class Task7 {
         return recursionCount(x - 1) + "\n" + x;
     }
 
-    //Задача 6
+    //Задача 6 (не до конца решена)
 
 
     public static String recursionDrawRectangle(int width, int height){
