@@ -80,6 +80,16 @@ public class Task7 {
 
     //Задача 6
 
+
+    public static String recursionDrawRectangle(int width, int height){
+        if(width <= 1){
+            return "+";
+        }if(height <= 1) {
+            return "+";
+        }
+        return recursionDrawRectangle(width, height - 1) + "+" + "\n" + "+";
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -100,9 +110,15 @@ public class Task7 {
             } else if (a == 5) {
                 System.out.println("Введите число, до которого нужно считать:");
                 int x = sc.nextInt();
+
                 System.out.println(recursionCount(x));
             } else if (a == 6) {
-                System.out.println();
+                System.out.println("Введите ширину прямоугольника:");
+                int width = sc.nextInt();
+                System.out.println("Введите высоту прямоугольника:");
+                int height = sc.nextInt();
+
+                System.out.println(recursionDrawRectangle(width, height));
             } else {
                 System.out.println("Вы ввели неверное значение. Перезапустите программу и попробуйте снова.");
             }
