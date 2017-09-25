@@ -64,21 +64,22 @@ public class Main {
 
     //Задание 6
 
-    /*public static String recursionDrawRectangle(int width, int height){
+    public static String recursionDrawRectangle(int width, int height){
         if(width <= 1){
             return "+";
         }if(height <= 1){
             return "+";
         }
-        return recursionDrawRectangle();
-    }*/
+        return recursionDrawRectangle(width - 1, height - 1) + "+" + "\n" + "+";
+    }
 
     public static void main(String[] args) {
-        count(5);
+        /*count(5);
         System.out.println(drawRectangle(6, 8));
         System.out.println(drawRectangle(4));
         System.out.println(getMax(100, 5));
         System.out.println(getMax(4.5F, 7.8F));
-        System.out.println(recursionCount(5));
+        System.out.println(recursionCount(5));*/
+        System.out.println(recursionDrawRectangle(5, 4));
     }
 }

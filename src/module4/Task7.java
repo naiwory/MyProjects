@@ -71,16 +71,12 @@ public class Task7 {
 
     //Задача 5
 
-    /*public static String recursionCount(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Введите число, до которого нужно считать:");
-        int x = sc.nextInt();
-
+    public static String recursionCount(int x){
         if (x <= 1) {
             return "1";
         }
         return recursionCount(x - 1) + "\n" + x;
-    }*/
+    }
 
     //Задача 6
 
@@ -102,7 +98,9 @@ public class Task7 {
             } else if (a == 4) {
                 System.out.println(getMaxInt());
             } else if (a == 5) {
-                System.out.println();
+                System.out.println("Введите число, до которого нужно считать:");
+                int x = sc.nextInt();
+                System.out.println(recursionCount(x));
             } else if (a == 6) {
                 System.out.println();
             } else {
