@@ -7,12 +7,11 @@ public class Task7 {
     //Задача 1
 
     public static void count(){
-
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите число, до которого нужно считать:");
         int x = sc.nextInt();
 
-        for(int i = 0; i == x; i++)
+        for(int i = 0; i <= x; i++)
             System.out.println(i);
     }
 
