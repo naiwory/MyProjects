@@ -1,27 +1,6 @@
 package module5.carInformation;
 
 public class CarWheel {
-    /*Класс CarWheel
-
-    На прямую к переменным этого класса никто не может, только через методы
-            Хранит
-
-    Состояние целостности шины (дробное число от 0-стерта до 1-новая)
-
-    Конструктор
-
-    Аналогичный принцип как в классе CarDoor
-
-    Методы
-
-    Сменить шину на новую
-
-    Стереть шину на X%
-
-    Получить состояние (return)
-
-    Вывести в консоль данные об объекте*/
-
     private double tireIntegrity;
 
     public CarWheel(){
@@ -40,8 +19,20 @@ public class CarWheel {
             tireIntegrity = 1;
     }
 
-    public void tireWipeOff(double percent){
-        
+    public double tireWipeOff(double percent){
+        percent = (tireIntegrity * percent) / 100;
+        return tireIntegrity = (tireIntegrity - percent);
     }
 
+    public void show(){
+        System.out.println(tireIntegrity);
+    }
+
+    public double getTireIntegrity() {
+        return tireIntegrity;
+    }
+
+    public void setTireIntegrity(double tireIntegrity) {
+        this.tireIntegrity = tireIntegrity;
+    }
 }

@@ -40,6 +40,18 @@ public class CarDoor {
         else if(windows = false) windows = true;
     }
 
+    public void show(){
+        if(doors = true)
+            System.out.println("Двери открыты");
+        else if(doors = false)
+            System.out.println("Двери закрыты");
+        if(windows = true)
+
+            System.out.println("Окна открыты");
+        else if(windows = false)
+            System.out.println("Окна закрыты");
+    }
+
     public boolean isDoors() {
         return doors;
     }
@@ -56,16 +68,5 @@ public class CarDoor {
         this.windows = windows;
     }
 
-    public void show(){
-        if(doors = true)
-            System.out.println("Двери открыты");
-        else if(doors = false)
-            System.out.println("Двери закрыты");
-        if(windows = true)
-
-            System.out.println("Окна открыты");
-        else if(windows = false)
-            System.out.println("Окна закрыты");
-    }
 
 }
