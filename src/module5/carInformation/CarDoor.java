@@ -1,6 +1,10 @@
 package module5.carInformation;
 
+import java.util.Scanner;
+
 public class CarDoor {
+    Scanner sc = new Scanner(System.in);
+
     private boolean doors;
     private boolean windows;
 
@@ -56,16 +60,20 @@ public class CarDoor {
         return doors;
     }
 
-    public void setDoors(boolean doors) {
-        this.doors = doors;
+    public void setDoors() {
+        System.out.println("Двери открыты или закрыты? Введите true или false:");
+        boolean d = sc.nextBoolean();
+        doors = d;
     }
 
     public boolean isWindows() {
         return windows;
     }
 
-    public void setWindows(boolean windows) {
-        this.windows = windows;
+    public void setWindows() {
+        System.out.println("Окна открыты или закрыты? Введите true или false:");
+        boolean w = sc.nextBoolean();
+        windows = w;
     }
 
 
