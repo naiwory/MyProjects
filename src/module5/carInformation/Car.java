@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Car {
     Scanner sc = new Scanner(System.in);
 
-    final String dateOfConstruction;
+    //final String dateOfConstruction;
     private String typeOfEngine;
     private double maxSpeed;
     private double accelerationTime100km;
@@ -15,9 +15,13 @@ public class Car {
     private CarWheel[] carWheel = new CarWheel[] {new CarWheel(), new CarWheel(), new CarWheel(), new CarWheel()};
     private CarDoor[] carDoor = new CarDoor[]{new CarDoor(), new CarDoor(), new CarDoor(), new CarDoor()};
 
-    public Car(String dateOfConstruction){
-        this.dateOfConstruction = dateOfConstruction;
+    public Car(){
+
     }
+
+    //public Car(String dateOfConstruction){
+       // this.dateOfConstruction = dateOfConstruction;
+    //}
 
     public Car(String typeOfEngine, double maxSpeed, double accelerationTime100km, int passengers, int currentPassengers, double currentSpeed){
         this.typeOfEngine = typeOfEngine;
@@ -62,7 +66,7 @@ public class Car {
         CarWheel[] cw = new CarWheel[carWheel.length + x];
         for(int i = 0; i < carWheel.length; i++)
             cw[i] = carWheel[i];
-
+        return cw[0];
     }
 
     private double currentMaxSpeed;
@@ -80,7 +84,7 @@ public class Car {
     }
 
     public void show(){
-        System.out.println("Дата производства автомобиля - " + dateOfConstruction);
+        //System.out.println("Дата производства автомобиля - " + dateOfConstruction);
         System.out.println("Тип двигателя - " + typeOfEngine);
         System.out.println("Максимальная скорость - " + maxSpeed);
         System.out.println("Время разгона до 100 км - " + accelerationTime100km);
@@ -98,9 +102,9 @@ public class Car {
         System.out.println("Текущая максимальная скорость - " + currentMaxSpeed);
     }
 
-    public String getDateOfConstruction(){
-        return dateOfConstruction;
-    }
+    //public String getDateOfConstruction(){
+        //return dateOfConstruction;
+    //}
 
     public String getTypeOfEngine() {
         return typeOfEngine;

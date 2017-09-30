@@ -9,7 +9,9 @@ public class CarMain {
         System.out.println("Выберите, с каким объектом вы хотите взаимодействовать: Car, CarDoor или CarWheel?");
         String carMain = sc.nextLine();
         if(carMain == "Car"){
-            Car c = new Car("");
+            //System.out.println("Введите дату производства автомобиля:");
+            //String doc = sc.nextLine();
+            Car c = new Car();
             System.out.println("Выберите один из методов данного объекта: onePassengerMore, onePassengerLess, " +
                     "noMorePassengers, doorByIndex, wheelByIndex, wheelsOffTheCar, moreWheels, currentMaxSpeed, show, " +
                     "getDateOfConstruction, getTypeOfEngine, setTypeOfEngine, getMaxSpeed, setMaxSpeed, getAccelerationTime100km, " +
@@ -17,59 +19,59 @@ public class CarMain {
                     "setCurrentSpeed, getCarWheel, setCarWheel, getCarDoor, setCarDoor, getCurrentMaxSpeed");
             String car = sc.nextLine();
             if(car == "onePassengerMore")
-                c.onePassengerMore();
+                System.out.println(c.onePassengerMore());
             else if(car == "onePassengerLess")
-                c.onePassengerLess();
+                System.out.println(c.onePassengerLess());
             else if(car == "noMorePassengers")
-                c.noMorePassengers();
+                System.out.println(c.noMorePassengers());
             else if(car == "doorByIndex")
-                c.doorByIndex();
+                System.out.println(c.doorByIndex());
             else if(car == "wheelByIndex")
-                c.wheelByIndex();
+                System.out.println(c.wheelByIndex());
             else if(car == "wheelsOffTheCar")
                 c.wheelsOffTheCar();
             else if(car == "moreWheels")
-                c.moreWheels();
+                System.out.println(c.moreWheels());
             else if(car == "currentMaxSpeed")
-                c.currentMaxSpeed();
+                System.out.println(c.currentMaxSpeed());
             else if(car == "show")
                 c.show();
-            else if(car == "getDateOfConstruction")
-                c.getDateOfConstruction();
+            //else if(car == "getDateOfConstruction")
+                //System.out.println(c.getDateOfConstruction());
             else if(car == "getTypeOfEngine")
-                c.getTypeOfEngine();
+                System.out.println(c.getTypeOfEngine());
             else if(car == "setTypeOfEngine")
                 c.setTypeOfEngine();
             else if(car == "getMaxSpeed")
-                c.getMaxSpeed();
+                System.out.println(c.getMaxSpeed());
             else if(car == "setMaxSpeed")
                 c.setMaxSpeed();
             else if(car == "getAccelerationTime100km")
-                c.getAccelerationTime100km();
+                System.out.println(c.getAccelerationTime100km());
             else if(car == "setAccelerationTime100km")
                 c.setAccelerationTime100km();
             else if(car == "getPassengers")
-                c.getPassengers();
+                System.out.println(c.getPassengers());
             else if(car == "setPassengers")
                 c.setPassengers();
             else if(car == "getCurrentPassengers")
-                c.getCurrentPassengers();
+                System.out.println(c.getCurrentPassengers());
             else if(car == "setCurrentPassengers")
                 c.setCurrentPassengers();
             else if(car == "getCurrentSpeed")
-                c.getCurrentSpeed();
+                System.out.println(c.getCurrentSpeed());
             else if(car == "setCurrentSpeed")
                 c.setCurrentSpeed();
             else if(car == "getCarWheel")
-                c.getCarWheel();
-            else if(car == "setCarWheel")
-                c.setCarWheel();
+                System.out.println(c.getCarWheel());
+            //else if(car == "setCarWheel")
+                //c.setCarWheel();
             else if(car == "getCarDoor")
-                c.getCarDoor();
-            else if(car == "setCarDoor")
-                c. setCarDoor();
+                System.out.println(c.getCarDoor());
+            //else if(car == "setCarDoor")
+                //c. setCarDoor();
             else if(car == "getCurrentMaxSpeed")
-                c.getCurrentMaxSpeed();
+                System.out.println(c.getCurrentMaxSpeed());
             else
                 System.out.println("Вы ввели неверное значение, перезапустите программу и попробуйте еще раз");
         }else if(carMain == "CarDoor"){
@@ -92,11 +94,11 @@ public class CarMain {
             else if(carDoor == "show")
                 cd.show();
             else if(carDoor == "isDoors")
-                cd.isDoors();
+                System.out.println(cd.isDoors());
             else if(carDoor == "setDoors")
                 cd.setDoors();
             else if(carDoor == "isWindows")
-                cd.isWindows();
+                System.out.println(cd.isWindows());
             else if(carDoor == "setWindows")
                 cd.setWindows();
             else
@@ -108,11 +110,11 @@ public class CarMain {
             if(carWheel == "newTire")
                 cw.newTire();
             else if(carWheel == "tireWipeOff")
-                cw.tireWipeOff();
+                System.out.println(cw.tireWipeOff());
             else if(carWheel == "show")
                 cw.show();
             else if(carWheel == "getTireIntegrity")
-                cw.getTireIntegrity();
+                System.out.println(cw.getTireIntegrity());
             else if(carWheel == "setTireIntegrity")
                 cw.setTireIntegrity();
             else
