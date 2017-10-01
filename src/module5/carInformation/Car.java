@@ -5,23 +5,19 @@ import java.util.Scanner;
 public class Car {
     Scanner sc = new Scanner(System.in);
 
-    //final String dateOfConstruction;
+    private String dateOfConstruction;
     private String typeOfEngine;
     private double maxSpeed;
     private double accelerationTime100km;
     private int passengers;
-    private int currentPassengers;
+    private int currentPassengers = 4;
     private double currentSpeed;
     private CarWheel[] carWheel = new CarWheel[] {new CarWheel(), new CarWheel(), new CarWheel(), new CarWheel()};
     private CarDoor[] carDoor = new CarDoor[]{new CarDoor(), new CarDoor(), new CarDoor(), new CarDoor()};
 
-    public Car(){
-
+    public Car(String dateOfConstruction){
+       this.dateOfConstruction = dateOfConstruction;
     }
-
-    //public Car(String dateOfConstruction){
-       // this.dateOfConstruction = dateOfConstruction;
-    //}
 
     public Car(String typeOfEngine, double maxSpeed, double accelerationTime100km, int passengers, int currentPassengers, double currentSpeed){
         this.typeOfEngine = typeOfEngine;
@@ -32,26 +28,26 @@ public class Car {
         this.currentSpeed = currentSpeed;
     }
 
-    public int onePassengerMore(){ return currentPassengers++; }
+    public int onePassengerMore(){ return currentPassengers += 1; }
 
     public int onePassengerLess(){
-        return currentPassengers--;
+        return currentPassengers -= 1;
     }
 
     public int noMorePassengers(){
         return currentPassengers = 0;
     }
 
-    public CarDoor doorByIndex(){
+    public boolean doorByIndex(){
         System.out.println("Введите значение индекса:");
         int i = sc. nextInt();
-        return carDoor[i];
+        return carDoor[i].isDoors() && carDoor[i].isWindows();
     }
 
-    public CarWheel wheelByIndex(){
+    public double wheelByIndex(){
         System.out.println("Введите значение индекса:");
         int i = sc. nextInt();
-        return carWheel[i];
+        return carWheel[i].getTireIntegrity();
     }
 
     public void wheelsOffTheCar(){
@@ -66,7 +62,7 @@ public class Car {
         CarWheel[] cw = new CarWheel[carWheel.length + x];
         for(int i = 0; i < carWheel.length; i++)
             cw[i] = carWheel[i];
-        return cw[0];
+            return null;
     }
 
     private double currentMaxSpeed;
@@ -84,7 +80,7 @@ public class Car {
     }
 
     public void show(){
-        //System.out.println("Дата производства автомобиля - " + dateOfConstruction);
+        System.out.println("Дата производства автомобиля - " + dateOfConstruction);
         System.out.println("Тип двигателя - " + typeOfEngine);
         System.out.println("Максимальная скорость - " + maxSpeed);
         System.out.println("Время разгона до 100 км - " + accelerationTime100km);
@@ -93,18 +89,26 @@ public class Car {
         System.out.println("Текущая скорость - " + currentSpeed);
 
         for(CarWheel a : carWheel){
-            System.out.print(a);
+            System.out.print(a.getTireIntegrity() + " ");
         }
         System.out.println();
         for(CarDoor a : carDoor){
-            System.out.print(a);
+            System.out.print(a.isDoors() + " ");
         }
+        System.out.println();
         System.out.println("Текущая максимальная скорость - " + currentMaxSpeed);
     }
 
-    //public String getDateOfConstruction(){
-        //return dateOfConstruction;
-    //}
+    public String getDateOfConstruction(){
+        return dateOfConstruction;
+    }
+
+    public void setDateOfConstruction() {
+        System.out.println("Введите дату производства автомобиля:");
+        String doc = sc.nextLine();
+        dateOfConstruction = doc;
+        System.out.println("Дата приозводства автомобиля: " + dateOfConstruction);
+    }
 
     public String getTypeOfEngine() {
         return typeOfEngine;
@@ -114,6 +118,7 @@ public class Car {
         System.out.println("Введите тип двигателя:");
         String tof = sc.nextLine();
         typeOfEngine = tof;
+        System.out.println("Тип двигателя: " + typeOfEngine);
     }
 
     public double getMaxSpeed() {
@@ -124,6 +129,7 @@ public class Car {
         System.out.println("Введите максимальную скорость:");
         double ms = sc.nextDouble();
         maxSpeed = ms;
+        System.out.println("Максимальная скорость: " + maxSpeed);
     }
 
     public double getAccelerationTime100km() {
@@ -134,6 +140,7 @@ public class Car {
         System.out.println("Введите время разгона до 100 км:");
         double at = sc.nextDouble();
         accelerationTime100km = at;
+        System.out.println("Время разгона до 100 км: " + accelerationTime100km);
     }
 
     public int getPassengers() {
@@ -144,6 +151,7 @@ public class Car {
         System.out.println("Введите общее число пассажиров:");
         int p = sc.nextInt();
         passengers = p;
+        System.out.println("Общее число пассажиров: " + passengers);
     }
 
     public int getCurrentPassengers() {
@@ -154,6 +162,7 @@ public class Car {
         System.out.println("Введите текущее число пассажиров:");
         int cp = sc.nextInt();
         currentPassengers = cp;
+        System.out.println("Текущее число пассажиров: " + currentPassengers);
     }
 
     public double getCurrentSpeed() {
@@ -164,6 +173,7 @@ public class Car {
         System.out.println("Введите текущую скорость:");
         double cs = sc.nextDouble();
         currentSpeed = cs;
+        System.out.println("Текущая скорость: " + currentSpeed);
     }
 
     public CarWheel[] getCarWheel() {

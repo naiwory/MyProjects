@@ -43,5 +43,6 @@ public class CarWheel {
         System.out.println("Введите степень стертости колеса:");
         double ti = sc.nextDouble();
         tireIntegrity = ti;
+        System.out.println("Степень стертости колеса: " + tireIntegrity);
     }
 }
