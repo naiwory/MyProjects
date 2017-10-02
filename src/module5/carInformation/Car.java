@@ -51,8 +51,10 @@ public class Car {
     }
 
     public void wheelsOffTheCar(){
-        for(int i = 0; i <= carWheel.length; i++)
-            carWheel[i] = null;
+        CarWheel[] cw = new CarWheel[carWheel.length];
+        for(int i = 0; i < carWheel.length; i++)
+            cw[i] = carWheel[i];
+        cw = carWheel;
         System.out.println("Колеса сняты");
     }
 
@@ -62,6 +64,11 @@ public class Car {
         CarWheel[] cw = new CarWheel[carWheel.length + x];
         for(int i = 0; i < carWheel.length; i++)
             cw[i] = carWheel[i];
+        for(int i = carWheel.length + 1; i == x; i++)
+            cw[i] = new CarWheel();
+        cw = carWheel;
+        for(CarWheel a : cw)
+            System.out.print(a.getTireIntegrity() + " ");
     }
 
     private double currentMaxSpeed;

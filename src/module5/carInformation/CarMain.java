@@ -93,13 +93,13 @@ public class CarMain {
                     System.out.println("Ваше колесо: " + c.getCarWheel());
                     break;
                 case "setCarWheel":
-                //c.setCarWheel();
+                c.setCarWheel(new CarWheel[]{});
                 break;
                 case "getCarDoor":
                     System.out.println("Ваша дверь: " + c.getCarDoor());
                     break;
                 case "setCarDoor":
-                //c. setCarDoor();
+                c. setCarDoor(new CarDoor[]{});
                 break;
                 case "getCurrentMaxSpeed":
                     System.out.println("Текущая максимальная скорость: " + c.getCurrentMaxSpeed() + " км/час");
