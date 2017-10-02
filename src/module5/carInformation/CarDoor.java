@@ -66,7 +66,6 @@ public class CarDoor {
         else if(doors = false)
             System.out.println("Двери закрыты");
         if(windows = true)
-
             System.out.println("Окна открыты");
         else if(windows = false)
             System.out.println("Окна закрыты");

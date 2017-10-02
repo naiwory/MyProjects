@@ -21,88 +21,88 @@ public class CarMain {
             String car = sc.nextLine();
             switch(car) {
                 case "onePassengerMore":
-                    System.out.println(c.onePassengerMore());
+                    System.out.println("Текущее количество пассажиров: " + c.onePassengerMore());
                     break;
                 case "onePassengerLess":
-                    System.out.println(c.onePassengerLess());
+                    System.out.println("Текущее количество пассажиров: " + c.onePassengerLess());
                     break;
                 case "noMorePassengers":
-                    System.out.println(c.noMorePassengers());
+                    System.out.println("Текущее количество пассажиров: " + c.noMorePassengers());
                     break;
                 case "doorByIndex":
-                    System.out.println(c.doorByIndex());
+                    System.out.println("Ваша дверь: " + c.doorByIndex());
                     break;
                 case "wheelByIndex":
-                    System.out.println(c.wheelByIndex());
+                    System.out.println("Ваше колесо:" + c.wheelByIndex());
                     break;
                 case "wheelsOffTheCar":
                     c.wheelsOffTheCar();
                     break;
                 case "moreWheels":
-                    System.out.println(c.moreWheels());
+                    c.moreWheels();
                     break;
                 case "currentMaxSpeed":
-                    System.out.println(c.currentMaxSpeed());
+                    System.out.println("Текущая максимальная скорость: " + c.currentMaxSpeed() + " км/час");
                     break;
                 case "show":
                     c.show();
                     break;
                 case "getDateOfConstruction":
-                    System.out.println(c.getDateOfConstruction());
+                    System.out.println("Дата производства автомобиля: " + c.getDateOfConstruction());
                     break;
                 case "setDateOfConstruction":
                     c.setDateOfConstruction();
                     break;
                 case "getTypeOfEngine":
-                    System.out.println(c.getTypeOfEngine());
+                    System.out.println("Тип двигателя: " + c.getTypeOfEngine());
                     break;
                 case "setTypeOfEngine":
                     c.setTypeOfEngine();
                     break;
                 case "getMaxSpeed":
-                    System.out.println(c.getMaxSpeed());
+                    System.out.println("Максимальная скорость: " + c.getMaxSpeed() + " км/час");
                     break;
                 case "setMaxSpeed":
                     c.setMaxSpeed();
                     break;
                 case "getAccelerationTime100km":
-                    System.out.println(c.getAccelerationTime100km());
+                    System.out.println("Время разгона до 100 км: " + c.getAccelerationTime100km() + " секунд");
                     break;
                 case "setAccelerationTime100km":
                     c.setAccelerationTime100km();
                     break;
                 case "getPassengers":
-                    System.out.println(c.getPassengers());
+                    System.out.println("Общее количество пассажиров: " + c.getPassengers());
                     break;
                 case "setPassengers":
                     c.setPassengers();
                     break;
                 case "getCurrentPassengers":
-                    System.out.println(c.getCurrentPassengers());
+                    System.out.println("Текущее количество пассажиров: " + c.getCurrentPassengers());
                     break;
                 case "setCurrentPassengers":
                     c.setCurrentPassengers();
                     break;
                 case "getCurrentSpeed":
-                    System.out.println(c.getCurrentSpeed());
+                    System.out.println("Текущая скорость: " + c.getCurrentSpeed() + " км/час");
                     break;
                 case "setCurrentSpeed":
                     c.setCurrentSpeed();
                     break;
                 case "getCarWheel":
-                    System.out.println(c.getCarWheel());
+                    System.out.println("Ваше колесо: " + c.getCarWheel());
                     break;
-                //case "setCarWheel":
+                case "setCarWheel":
                 //c.setCarWheel();
-                //break;
+                break;
                 case "getCarDoor":
-                    System.out.println(c.getCarDoor());
+                    System.out.println("Ваша дверь: " + c.getCarDoor());
                     break;
-                //case "setCarDoor":
+                case "setCarDoor":
                 //c. setCarDoor();
-                //break;
+                break;
                 case "getCurrentMaxSpeed":
-                    System.out.println(c.getCurrentMaxSpeed());
+                    System.out.println("Текущая максимальная скорость: " + c.getCurrentMaxSpeed() + " км/час");
                     break;
                 default:
                     System.out.println("Вы ввели неверное значение, перезапустите программу и попробуйте еще раз");
@@ -137,13 +137,13 @@ public class CarMain {
                     cd.show();
                     break;
                 case "isDoors":
-                    System.out.println(cd.isDoors());
+                    System.out.println("Значение дверей: " + cd.isDoors());
                     break;
                 case "setDoors":
                     cd.setDoors();
                     break;
                 case "isWindows":
-                    System.out.println(cd.isWindows());
+                    System.out.println("Значение окон: " + cd.isWindows());
                     break;
                 case "setWindows":
                     cd.setWindows();
@@ -162,14 +162,13 @@ public class CarMain {
                     cw.newTire();
                     break;
                 case "tireWipeOff":
-                    System.out.println(cw.tireWipeOff());
+                    System.out.println("Ваше стертое колесо: " + cw.tireWipeOff());
                     break;
                 case "show":
                     cw.show();
                     break;
                 case "getTireIntegrity":
-                    System.out.println(cw.getTireIntegrity());
-                    break;
+                    System.out.println("Cтертость колеса: " + cw.getTireIntegrity());
                 case "setTireIntegrity":
                     cw.setTireIntegrity();
                     break;
@@ -177,6 +176,7 @@ public class CarMain {
                     System.out.println("Вы ввели неверное значение, перезапустите программу и попробуйте еще раз");
                     break;
             }
+                break;
             default:
                 System.out.println("Вы ввели неверное значение, перезапустите программу и попробуйте еще раз");
                 break;

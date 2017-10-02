@@ -56,13 +56,12 @@ public class Car {
         System.out.println("Колеса сняты");
     }
 
-    public CarWheel moreWheels(){
+    public void moreWheels(){
         System.out.println("Введите количество новых колес:");
         int x = sc.nextInt();
         CarWheel[] cw = new CarWheel[carWheel.length + x];
         for(int i = 0; i < carWheel.length; i++)
             cw[i] = carWheel[i];
-            return null;
     }
 
     private double currentMaxSpeed;
@@ -70,13 +69,13 @@ public class Car {
         if (currentPassengers == 0)
             return currentMaxSpeed = 0;
 
-        double min = carWheel[0].getTireIntegrity();
+        CarWheel min = carWheel[0];
         for (int i = 1; i < carWheel.length; i++) {
-            if (carWheel[i].getTireIntegrity() < min) {
-                min = carWheel[i].getTireIntegrity();
+            if (min.getTireIntegrity() > carWheel[i].getTireIntegrity()) {
+                min = carWheel[i];
             }
         }
-        return currentMaxSpeed = maxSpeed * min;
+        return currentMaxSpeed = maxSpeed * min.getTireIntegrity();
     }
 
     public void show(){

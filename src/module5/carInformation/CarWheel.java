@@ -35,7 +35,7 @@ public class CarWheel {
         System.out.println("Стертость колеса составляет: " + tireIntegrity);
     }
 
-    public double getTireIntegrity() {
+    public double getTireIntegrity(){
         return tireIntegrity;
     }
 
