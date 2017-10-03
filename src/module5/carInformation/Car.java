@@ -12,6 +12,7 @@ public class Car {
     private int passengers;
     private int currentPassengers = 4;
     private double currentSpeed;
+    private double currentMaxSpeed;
     private CarWheel[] carWheel = new CarWheel[] {new CarWheel(), new CarWheel(), new CarWheel(), new CarWheel()};
     private CarDoor[] carDoor = new CarDoor[]{new CarDoor(), new CarDoor(), new CarDoor(), new CarDoor()};
 
@@ -19,13 +20,14 @@ public class Car {
        this.dateOfConstruction = dateOfConstruction;
     }
 
-    public Car(String typeOfEngine, double maxSpeed, double accelerationTime100km, int passengers, int currentPassengers, double currentSpeed){
+    public Car(String typeOfEngine, double maxSpeed, double accelerationTime100km, int passengers, int currentPassengers, double currentSpeed, double currentMaxSpeed){
         this.typeOfEngine = typeOfEngine;
         this.maxSpeed = maxSpeed;
         this.accelerationTime100km = accelerationTime100km;
         this.passengers = passengers;
         this.currentPassengers = currentPassengers;
         this.currentSpeed = currentSpeed;
+        this.currentMaxSpeed = currentMaxSpeed;
     }
 
     public int onePassengerMore(){ return currentPassengers += 1; }
@@ -62,19 +64,22 @@ public class Car {
         System.out.println("Введите количество новых колес:");
         int x = sc.nextInt();
         CarWheel[] cw = new CarWheel[carWheel.length + x];
-        for(int i = 0; i < carWheel.length; i++)
+        for(int i = 0; i < carWheel.length; i++) {
             cw[i] = carWheel[i];
-        for(int i = carWheel.length + 1; i == x; i++)
+        }
+        for(int i = carWheel.length + 1; i == x; i++) {
             cw[i] = new CarWheel();
+        }
         cw = carWheel;
-        for(CarWheel a : cw)
+        for(CarWheel a : cw) {
             System.out.print(a.getTireIntegrity() + " ");
+        }
     }
 
-    private double currentMaxSpeed;
     public double currentMaxSpeed() {
-        if (currentPassengers == 0)
+        if (currentPassengers == 0) {
             return currentMaxSpeed = 0;
+        }
 
         CarWheel min = carWheel[0];
         for (int i = 1; i < carWheel.length; i++) {

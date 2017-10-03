@@ -12,16 +12,18 @@ public class CarWheel {
     }
 
     public CarWheel(double tireIntegrity){
-        if(tireIntegrity >= 0 && tireIntegrity <= 1)
+        if(tireIntegrity >= 0 && tireIntegrity <= 1) {
             this.tireIntegrity = tireIntegrity;
-        else
+        } else {
             System.out.println("Вы ввели неверное значение");
+        }
     }
 
     public void newTire(){
-        if(tireIntegrity <= 0)
+        if(tireIntegrity <= 0) {
             tireIntegrity = 1;
-        System.out.println("Колесо успешно заменено");
+            System.out.println("Колесо успешно заменено");
+        }
     }
 
     public double tireWipeOff(){

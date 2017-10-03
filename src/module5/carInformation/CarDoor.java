@@ -61,14 +61,16 @@ public class CarDoor {
     }
 
     public void show(){
-        if(doors = true)
+        if(doors = true) {
             System.out.println("Двери открыты");
-        else if(doors = false)
+        }else if(doors = false) {
             System.out.println("Двери закрыты");
-        if(windows = true)
+        }
+        if(windows = true) {
             System.out.println("Окна открыты");
-        else if(windows = false)
+        }else if(windows = false) {
             System.out.println("Окна закрыты");
+        }
     }
 
     public boolean isDoors() {
