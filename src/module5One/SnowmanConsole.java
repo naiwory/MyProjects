@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.stage.Screen;
@@ -32,7 +33,7 @@ public class SnowmanConsole extends Application{
         Circle[] circle = new Circle[n];
 
         for(int i = 0; i < circle.length; i++){
-            circle[i] = new Circle(min + Math.random() * max,);
+            circle[i] = new Circle(min + Math.random() * max, Color.WHITE);
             circle[i].setFill(Paint.valueOf(""));
             circle[i].setStroke(Paint.valueOf(""));
         }

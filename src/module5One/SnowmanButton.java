@@ -23,7 +23,7 @@ public class SnowmanButton extends Application {
     private double max;
     private int n;
 
-    public Color random(){
+    public static Color random(){
         Random r = new Random();
         return Color.color(r.nextDouble(), r.nextDouble(), r.nextDouble());
     }
@@ -41,7 +41,7 @@ public class SnowmanButton extends Application {
 
 }
 
-    public void buttonR(Pane root) {
+    /*public void buttonR(Pane root) {
         Button buttonR = new Button("Покрась в красный");
         buttonR.setTranslateX(250);
         buttonR.setTranslateY(10);
@@ -54,7 +54,7 @@ public class SnowmanButton extends Application {
                 }
             }
         });
-    }
+    }*/
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -95,7 +95,7 @@ public class SnowmanButton extends Application {
         Scene scene = new Scene(root);
 
 
-        Button buttonG = new Button("Покрась в оттенки серого");
+        /*Button buttonG = new Button("Покрась в оттенки серого");
         buttonG.setTranslateX(350);
         buttonG.setTranslateY(10);
         buttonG.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -115,7 +115,7 @@ public class SnowmanButton extends Application {
 
                 snowman.seStroke(gradient);
             }
-        });
+        });*/
 
         primaryStage.setScene(scene);
         primaryStage.setWidth(500);

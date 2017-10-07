@@ -48,13 +48,21 @@ public class Star extends Application {
         });
 
 
-        Line[] line = new Line[10];
-        for (int i = 0; i < line.length; i++) {
-            line[i] = new Line();
-        }
+        Line[] star = new Line[]{
+                new Line(0,10, 2, 3),
+                new Line(2, 3, 10, 3),
+                new Line(10, 3, 4, -1),
+                new Line(4, -1, 6, -8),
+                new Line(6, -8, 0, -4),
+                new Line(0, -4, -6, -8),
+                new Line(-6, -8, -4, -1),
+                new Line(-4, -1, -10, 3),
+                new Line(-10, 3, -2, 3),
+                new Line(-2, 3, 0, 10)
+        };
 
         Pane root = new Pane();
-        root.getChildren().addAll(line);
+        root.getChildren().addAll(star);
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.setWidth(500);
