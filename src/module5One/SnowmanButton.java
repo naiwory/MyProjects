@@ -33,31 +33,14 @@ public class SnowmanButton extends Application {
     Circle[] snowman = new Circle[n];
 
         for(int i = 0;i<snowman.length;i++) {
-        snowman[i] = new Circle(200, 100, min + Math.random() * (max - min), Color.WHITE);
-        snowman[i].setFill(Color.TRANSPARENT);
+        snowman[i] = new Circle(200, 100, min + Math.random() * (max - min), Color.TRANSPARENT);
         snowman[i].setStroke(random());
     }
         root.getChildren().addAll(snowman);
 
 }
 
-    /*public void buttonR(Pane root) {
-        Button buttonR = new Button("Покрась в красный");
-        buttonR.setTranslateX(250);
-        buttonR.setTranslateY(10);
-        buttonR.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                for (int i = 0; i < snowman.length; i++) {
-                    snowman[i].setFill(Paint.valueOf("#FF0000"));
-                    snowman[i].setStroke(Paint.valueOf("#FF0000"));
-                }
-            }
-        });
-    }*/
-
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void initButtons(Pane root){
         TextField tf = new TextField("Введите количество кругов");
         tf.setTranslateX(10);
         tf.setTranslateY(10);
@@ -80,22 +63,30 @@ public class SnowmanButton extends Application {
                 double min = Double.parseDouble(tfMin.getText());
                 double max = Double.parseDouble(tfMax.getText());
 
-
+                root.getChildren().addAll(tf, tfMin, tfMax, button);
             }
 
         });
+    }
 
+    public void buttonR(Pane root, Circle[] snowman) {
+        Button buttonR = new Button("Покрась в красный");
+        buttonR.setTranslateX(250);
+        buttonR.setTranslateY(10);
+        buttonR.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                for (int i = 0; i < snowman.length; i++) {
+                    snowman[i].setFill(Paint.valueOf("#FF0000"));
+                    snowman[i].setStroke(Paint.valueOf("#FF0000"));
+                }
+                root.getChildren().addAll(buttonR);
+            }
+        });
+    }
 
-
-
-
-
-        Pane root = new Pane();
-        drawSnowman(root);
-        Scene scene = new Scene(root);
-
-
-        /*Button buttonG = new Button("Покрась в оттенки серого");
+    public void buttonG(Pane root, Circle[] snowman) {
+        Button buttonG = new Button("Покрась в оттенки серого");
         buttonG.setTranslateX(350);
         buttonG.setTranslateY(10);
         buttonG.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -107,15 +98,30 @@ public class SnowmanButton extends Application {
                         new Stop(1, Color.LIGHTGRAY)
                 };
                 LinearGradient gradient = new LinearGradient(
-                        , 0,
+                        0, 0,
                         1, 1,
                         true,
                         CycleMethod.NO_CYCLE,
                         stops);
 
-                snowman.seStroke(gradient);
+                snowman.setStroke(gradient);
+                root.getChildren().addAll(buttonG);
             }
-        });*/
+        });
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+
+        Pane root = new Pane();
+        drawSnowman(root);
+        initButtons(root);
+        buttonR(root, snowman);
+        buttonG(root, snowman);
+
+        Scene scene = new Scene(root);
+
+
 
         primaryStage.setScene(scene);
         primaryStage.setWidth(500);

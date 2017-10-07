@@ -20,8 +20,9 @@ public class Star extends Application {
     private double y;
     private double r;
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void initButtons(Pane root) {
+
+
         TextField tfX = new TextField("Введите x центра звезды");
         tfX.setTranslateX(10);
         tfX.setTranslateY(10);
@@ -37,31 +38,36 @@ public class Star extends Application {
         Button button = new Button("Отправить данные");
         button.setTranslateX(350);
         button.setTranslateY(10);
-        button.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                x = Double.parseDouble(tfX.getText());
-                y = Double.parseDouble(tfY.getText());
-                r = Double.parseDouble(tfR.getText());
-
-            }
+        button.setOnMouseClicked(event -> {
+            x = Double.parseDouble(tfX.getText()),
+                    y = Double.parseDouble(tfY.getText()),
+                    r = Double.parseDouble(tfR.getText())
         });
 
 
+        root.getChildren().addAll(tfX, tfY, tfR, button);
+    }
+
+});
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+
         Line[] star = new Line[]{
-                new Line(0,10, 2, 3),
-                new Line(2, 3, 10, 3),
-                new Line(10, 3, 4, -1),
-                new Line(4, -1, 6, -8),
-                new Line(6, -8, 0, -4),
-                new Line(0, -4, -6, -8),
-                new Line(-6, -8, -4, -1),
-                new Line(-4, -1, -10, 3),
-                new Line(-10, 3, -2, 3),
-                new Line(-2, 3, 0, 10)
+                new Line(250, 150, 270, 220),
+                new Line(270, 220, 360, 220),
+                new Line(360, 220, 290, 260),
+                new Line(290, 260, 310, 330),
+                new Line(310, 330, 250, 290),
+                new Line(250, 290, 190,330),
+                new Line(190, 330, 210, 260),
+                new Line(210, 260, 150, 220),
+                new Line(150, 220, 230, 220),
+                new Line(230, 220, 250, 150)
         };
 
         Pane root = new Pane();
+        initButtons(root);
         root.getChildren().addAll(star);
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
