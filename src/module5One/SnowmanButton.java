@@ -7,14 +7,53 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Paint;
+import javafx.scene.paint.*;
 import javafx.scene.shape.Circle;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-public class SnowmanButton extends Application{
+import java.util.Random;
+
+public class SnowmanButton extends Application {
     public static void main(String[] args) {
         launch(args);
+    }
+
+    private double min;
+    private double max;
+    private int n;
+
+    public Color random(){
+        Random r = new Random();
+        return Color.color(r.nextDouble(), r.nextDouble(), r.nextDouble());
+    }
+
+    public void drawSnowman(Pane root){
+
+    Circle[] snowman = new Circle[n];
+
+        for(int i = 0;i<snowman.length;i++) {
+        snowman[i] = new Circle(200, 100, min + Math.random() * (max - min), Color.WHITE);
+        snowman[i].setFill(Color.TRANSPARENT);
+        snowman[i].setStroke(random());
+    }
+        root.getChildren().addAll(snowman);
+
+}
+
+    public void buttonR(Pane root) {
+        Button buttonR = new Button("Покрась в красный");
+        buttonR.setTranslateX(250);
+        buttonR.setTranslateY(10);
+        buttonR.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                for (int i = 0; i < snowman.length; i++) {
+                    snowman[i].setFill(Paint.valueOf("#FF0000"));
+                    snowman[i].setStroke(Paint.valueOf("#FF0000"));
+                }
+            }
+        });
     }
 
     @Override
@@ -31,7 +70,7 @@ public class SnowmanButton extends Application{
         tfMax.setTranslateX(10);
         tfMax.setTranslateY(90);
 
-        Button button = new Button("Принять данные");
+        Button button = new Button("Отправить данные");
         button.setTranslateX(350);
         button.setTranslateY(10);
         button.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -41,45 +80,40 @@ public class SnowmanButton extends Application{
                 double min = Double.parseDouble(tfMin.getText());
                 double max = Double.parseDouble(tfMax.getText());
 
+
             }
+
         });
 
-        public void circles(int n, double min, double max) {
-        Circle[] circle = new Circle[n];
 
-        for (int i = 0; i < circle.length; i++) {
-            circle[i] = new Circle(min + Math.random() * max, );
-            circle[i].setFill(Paint.valueOf(""));
-            circle[i].setStroke(Paint.valueOf(""));
-        }
+
+
+
 
         Pane root = new Pane();
-        root.getChildren().addAll(circle);
+        drawSnowman(root);
         Scene scene = new Scene(root);
 
-        Button buttonR = new Button("Покрась в красный");
-        buttonR.setTranslateX(250);
-        buttonR.setTranslateY(10);
-        buttonR.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                for(int i = 0; i < circle.length; i++){
-                    circle[i].setFill(Paint.valueOf("#FF0000"));
-                    circle[i].setStroke(Paint.valueOf("#FF0000"));
-                }
-            }
-        });
 
-        Button buttonG = new Button("Покрась в красный");
+        Button buttonG = new Button("Покрась в оттенки серого");
         buttonG.setTranslateX(350);
         buttonG.setTranslateY(10);
         buttonG.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                for(int i = 0; i < circle.length; i++){
-                    circle[i].setFill(Paint.valueOf("#FF0000"));
-                    circle[i].setStroke(Paint.valueOf("#FF0000"));
-                }
+                Stop[] stops = new Stop[]{
+                        new Stop(0, Color.BLACK),
+                        new Stop(0.5f, Color.GRAY),
+                        new Stop(1, Color.LIGHTGRAY)
+                };
+                LinearGradient gradient = new LinearGradient(
+                        , 0,
+                        1, 1,
+                        true,
+                        CycleMethod.NO_CYCLE,
+                        stops);
+
+                snowman.seStroke(gradient);
             }
         });
 
