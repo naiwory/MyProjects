@@ -39,7 +39,7 @@ public class Star extends Application {
         button.setTranslateX(350);
         button.setTranslateY(10);
         button.setOnMouseClicked(event -> {
-            x = Double.parseDouble(tfX.getText()),
+                    x = Double.parseDouble(tfX.getText()),
                     y = Double.parseDouble(tfY.getText()),
                     r = Double.parseDouble(tfR.getText())
         });
@@ -48,18 +48,17 @@ public class Star extends Application {
         root.getChildren().addAll(tfX, tfY, tfR, button);
     }
 
-});
 
     @Override
     public void start(Stage primaryStage) throws Exception {
 
         Line[] star = new Line[]{
                 new Line(250, 150, 270, 220),
-                new Line(270, 220, 360, 220),
-                new Line(360, 220, 290, 260),
+                new Line(270, 220, 350, 220),
+                new Line(350, 220, 290, 260),
                 new Line(290, 260, 310, 330),
                 new Line(310, 330, 250, 290),
-                new Line(250, 290, 190,330),
+                new Line(250, 290, 190, 330),
                 new Line(190, 330, 210, 260),
                 new Line(210, 260, 150, 220),
                 new Line(150, 220, 230, 220),
@@ -67,7 +66,7 @@ public class Star extends Application {
         };
 
         Pane root = new Pane();
-        initButtons(root);
+        //initButtons(root);
         root.getChildren().addAll(star);
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);

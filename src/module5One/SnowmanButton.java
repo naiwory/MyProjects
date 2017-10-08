@@ -28,16 +28,17 @@ public class SnowmanButton extends Application {
         return Color.color(r.nextDouble(), r.nextDouble(), r.nextDouble());
     }
 
-    public void drawSnowman(Pane root){
+    public Circle[] drawSnowman(Pane root){
 
     Circle[] snowman = new Circle[n];
 
         for(int i = 0;i<snowman.length;i++) {
-        snowman[i] = new Circle(200, 100, min + Math.random() * (max - min), Color.TRANSPARENT);
+        snowman[i] = new Circle(250, (snowman[i - 1].getRadius() * 2) + (snowman[i].getRadius()),
+                min + Math.random() * (max - min), Color.TRANSPARENT);
         snowman[i].setStroke(random());
     }
         root.getChildren().addAll(snowman);
-
+        return snowman;
 }
 
     public void initButtons(Pane root){
@@ -104,7 +105,8 @@ public class SnowmanButton extends Application {
                         CycleMethod.NO_CYCLE,
                         stops);
 
-                snowman.setStroke(gradient);
+                for(int i = 0; i < snowman.length; i++)
+                snowman[i].setStroke(gradient);
                 root.getChildren().addAll(buttonG);
             }
         });
@@ -116,8 +118,8 @@ public class SnowmanButton extends Application {
         Pane root = new Pane();
         drawSnowman(root);
         initButtons(root);
-        buttonR(root, snowman);
-        buttonG(root, snowman);
+        buttonR(root, drawSnowman(root));
+        buttonG(root, drawSnowman(root));
 
         Scene scene = new Scene(root);
 

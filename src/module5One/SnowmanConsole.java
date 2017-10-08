@@ -22,16 +22,17 @@ public class SnowmanConsole extends Application{
     private double max;
     private int n;
 
-    public void drawSnowman(Pane root){
+    public Circle[] drawSnowman(Pane root){
 
         Circle[] snowman = new Circle[n];
 
         for(int i = 0;i<snowman.length;i++) {
-            snowman[i] = new Circle(200, 100, min + Math.random() * (max - min), Color.TRANSPARENT);
+            snowman[i] = new Circle(200,  (snowman[i - 1].getRadius() * 2) + (snowman[i].getRadius()),
+                    min + Math.random() * (max - min), Color.TRANSPARENT);
             snowman[i].setStroke(SnowmanButton.random());
         }
         root.getChildren().addAll(snowman);
-
+        return snowman;
     }
 
     public void buttonR(Pane root, Circle[] snowman) {
@@ -69,7 +70,8 @@ public class SnowmanConsole extends Application{
                         CycleMethod.NO_CYCLE,
                         stops);
 
-                snowman.setStroke(gradient);
+                for(int i = 0; i < snowman.length; i++)
+                    snowman[i].setStroke(gradient);
                 root.getChildren().addAll(buttonG);
             }
         });
@@ -88,8 +90,8 @@ public class SnowmanConsole extends Application{
 
         Pane root = new Pane();
         drawSnowman(root);
-        buttonR(root, snowman);
-        buttonG(root, snowman);
+        buttonR(root, drawSnowman(root));
+        buttonG(root, drawSnowman(root));
 
         Scene scene = new Scene(root);
 
