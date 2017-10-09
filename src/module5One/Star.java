@@ -38,11 +38,11 @@ public class Star extends Application {
         Button button = new Button("Отправить данные");
         button.setTranslateX(350);
         button.setTranslateY(10);
-        button.setOnMouseClicked(event -> {
+        /*button.setOnMouseClicked(event -> {
                     x = Double.parseDouble(tfX.getText()),
                     y = Double.parseDouble(tfY.getText()),
                     r = Double.parseDouble(tfR.getText())
-        });
+        });*/
 
 
         root.getChildren().addAll(tfX, tfY, tfR, button);

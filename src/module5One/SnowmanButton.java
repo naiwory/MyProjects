@@ -32,11 +32,16 @@ public class SnowmanButton extends Application {
 
     Circle[] snowman = new Circle[n];
 
-        for(int i = 0;i<snowman.length;i++) {
+        for(int i = 0; i < snowman.length; i++) {
         snowman[i] = new Circle(250, (snowman[i - 1].getRadius() * 2) + (snowman[i].getRadius()),
                 min + Math.random() * (max - min), Color.TRANSPARENT);
         snowman[i].setStroke(random());
     }
+    Circle[] snowmanHead = new Circle[3];
+        for(int i = 0; i < 3; i++){
+            snowmanHead[i] = new Circle(2, 2, 2);
+            snowmanHead[i].setStroke(random());
+        }
         root.getChildren().addAll(snowman);
         return snowman;
 }
@@ -63,6 +68,7 @@ public class SnowmanButton extends Application {
                 int n = Integer.parseInt(tf.getText());
                 double min = Double.parseDouble(tfMin.getText());
                 double max = Double.parseDouble(tfMax.getText());
+                drawSnowman(root);
 
                 root.getChildren().addAll(tf, tfMin, tfMax, button);
             }
