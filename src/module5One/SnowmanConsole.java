@@ -31,6 +31,11 @@ public class SnowmanConsole extends Application{
                     min + Math.random() * (max - min), Color.TRANSPARENT);
             snowman[i].setStroke(SnowmanButton.random());
         }
+        Circle[] snowmanHead = new Circle[3];
+        for(int i = 0; i < 3; i++){
+            snowmanHead[i] = new Circle(2, 2, 2);
+            snowmanHead[i].setStroke(SnowmanButton.random());
+        }
         root.getChildren().addAll(snowman);
         return snowman;
     }
