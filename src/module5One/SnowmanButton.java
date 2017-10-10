@@ -1,27 +1,29 @@
 package module5One;
 
-import javafx.application.Application;
 import javafx.event.EventHandler;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.*;
 import javafx.scene.shape.Circle;
-import javafx.stage.Screen;
-import javafx.stage.Stage;
 
 import java.util.Random;
 
-public class SnowmanButton extends Application {
-    public static void main(String[] args) {
-        launch(args);
-    }
+public class SnowmanButton {
 
     private double min;
     private double max;
     private int n;
+
+    public SnowmanButton() {
+    }
+
+    public SnowmanButton(double min, double max, int n) {
+        this.min = min;
+        this.max = max;
+        this.n = n;
+    }
 
     public static Color random(){
         Random r = new Random();
@@ -118,24 +120,29 @@ public class SnowmanButton extends Application {
         });
     }
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-
-        Pane root = new Pane();
-        drawSnowman(root);
-        initButtons(root);
-        buttonR(root, drawSnowman(root));
-        buttonG(root, drawSnowman(root));
-
-        Scene scene = new Scene(root);
-
-
-
-        primaryStage.setScene(scene);
-        primaryStage.setWidth(500);
-        primaryStage.setHeight(500);
-        primaryStage.setX(Screen.getPrimary().getBounds().getWidth() - primaryStage.getWidth());
-        primaryStage.show();
+    public double getMin() {
+        return min;
     }
 
+    public void setMin(double min) {
+        this.min = min;
+    }
+
+    public double getMax() {
+        return max;
+    }
+
+    public void setMax(double max) {
+        this.max = max;
+    }
+
+    public int getN() {
+        return n;
+    }
+
+    public void setN(int n) {
+        this.n = n;
+    }
 }
+
+

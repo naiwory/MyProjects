@@ -1,26 +1,39 @@
 package module5One;
 
-import javafx.application.Application;
 import javafx.event.EventHandler;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.*;
 import javafx.scene.shape.Circle;
-import javafx.stage.Screen;
-import javafx.stage.Stage;
 
 import java.util.Scanner;
 
-public class SnowmanConsole extends Application{
-    public static void main(String[] args) {
-        launch(args);
-    }
+public class SnowmanConsole{
 
     private double min;
     private double max;
     private int n;
+
+    public SnowmanConsole(){
+
+    }
+
+    public SnowmanConsole(double min, double max, int n) {
+        this.min = min;
+        this.max = max;
+        this.n = n;
+    }
+
+    public void console() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите количество кругов:");
+        int n = sc.nextInt();
+        System.out.println("Введите минимальный радиус круга:");
+        int min = sc.nextInt();
+        System.out.println("Введите максимальный радиус круга:");
+        int max = sc.nextInt();
+    }
 
     public Circle[] drawSnowman(Pane root){
 
@@ -82,29 +95,27 @@ public class SnowmanConsole extends Application{
         });
     }
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Введите количество кругов:");
-        int n = sc.nextInt();
-        System.out.println("Введите минимальный радиус круга:");
-        int min = sc.nextInt();
-        System.out.println("Введите максимальный радиус круга:");
-        int max = sc.nextInt();
-
-        Pane root = new Pane();
-        drawSnowman(root);
-        buttonR(root, drawSnowman(root));
-        buttonG(root, drawSnowman(root));
-
-        Scene scene = new Scene(root);
-
-        primaryStage.setScene(scene);
-        primaryStage.setWidth(500);
-        primaryStage.setHeight(500);
-        primaryStage.setX(Screen.getPrimary().getBounds().getWidth() - primaryStage.getWidth());
-        primaryStage.show();
+    public double getMin() {
+        return min;
     }
 
+    public void setMin(double min) {
+        this.min = min;
+    }
+
+    public double getMax() {
+        return max;
+    }
+
+    public void setMax(double max) {
+        this.max = max;
+    }
+
+    public int getN() {
+        return n;
+    }
+
+    public void setN(int n) {
+        this.n = n;
+    }
 }
