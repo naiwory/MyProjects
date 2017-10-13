@@ -21,7 +21,7 @@ public class Star {
         this.r = r;
     }
 
-    public void initButtons(Pane root) {
+    /*public void initButtons(Pane root) {
 
 
         TextField tfX = new TextField("Введите x центра звезды");
@@ -47,7 +47,7 @@ public class Star {
 
 
         root.getChildren().addAll(tfX, tfY, tfR, button);
-    }
+    }*/
 
     public void drawStar(Pane root) {
         Line[] star = new Line[]{

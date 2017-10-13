@@ -28,7 +28,7 @@ public class FXMain extends Application {
         sb.buttonG(root, sb.drawSnowman(root));
 
         Star star = new Star();
-        star.initButtons(root);
+        //star.initButtons(root);
 
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);

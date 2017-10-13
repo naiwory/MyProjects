@@ -3,26 +3,25 @@ package module5Two;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 
-import java.util.Random;
-
 public class Player6 extends Player3{
 
-    public Player6(double PRICE, String songName, String[] playlist) {
-        super(PRICE, songName, playlist);
+
+    public Player6(String songName, double PRICE, String[] playlist) {
+        super(songName, PRICE, playlist);
     }
 
     public void shuffle(){
-        Random r = new Random();
-        for (String song : super.getPlaylist()) {
-            System.out.println("Playing: " + song);
+        for (int i = (int)Math.round(Math.random() * super.getPlaylist().length - 1);
+             i < (int)Math.round(Math.random() * super.getPlaylist().length); i++) {
+            System.out.println("Playing: " + super.getPlaylist()[i]);
         }
     }
 
     @Override
     public void show(Pane root) {
         super.show(root);
-        Button button = new Button();
-        button.setTranslateX(150);
+        Button button = new Button("Перемешай все песни");
+        button.setTranslateX(450);
         button.setTranslateY(50);
         button.setOnMouseClicked(event -> shuffle());
 

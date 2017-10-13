@@ -3,8 +3,8 @@ package module5Two;
 public class Player2 extends Player1 {
 
 
-    public Player2(double PRICE, String songName) {
-        super(PRICE, songName);
+    public Player2(String songName, double PRICE) {
+        super(songName, PRICE);
     }
 
     @Override

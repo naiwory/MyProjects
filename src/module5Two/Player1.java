@@ -3,22 +3,22 @@ package module5Two;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 
-public class Player1 {
+public class Player1 extends Player{
 
-    private final static double PRICE;
-    private String songName;
+    private final double PRICE;
 
-    public Player1(double PRICE, String songName) {
+    public Player1(String songName, double PRICE) {
+        super(songName);
         this.PRICE = PRICE;
-        this.songName = songName;
     }
 
+
     public void playSong(){
-        System.out.println("Playing: " + songName);
+        System.out.println("Playing: " + super.getSongName());
     }
 
     public void show(Pane root){
-        Button button = new Button();
+        Button button = new Button("Проиграй песню");
         button.setTranslateX(50);
         button.setTranslateY(50);
         button.setOnMouseClicked(event -> playSong());
@@ -26,7 +26,7 @@ public class Player1 {
         root.getChildren().add(button);
     }
 
-    public static double getPRICE() {
+    public double getPRICE() {
         return PRICE;
     }
 }

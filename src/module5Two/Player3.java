@@ -7,10 +7,11 @@ public class Player3 extends Player1{
 
     private String[] playlist = new String[]{};
 
-    public Player3(double PRICE, String songName, String[] playlist) {
-        super(PRICE, songName);
+    public Player3(String songName, double PRICE, String[] playlist) {
+        super(songName, PRICE);
         this.playlist = playlist;
     }
+
 
     @Override
     public void playSong() {
@@ -26,8 +27,8 @@ public class Player3 extends Player1{
     @Override
     public void show(Pane root) {
         super.show(root);
-        Button button = new Button();
-        button.setTranslateX(100);
+        Button button = new Button("Проиграй все песни");
+        button.setTranslateX(250);
         button.setTranslateY(50);
         button.setOnMouseClicked(event -> playAllSongs());
 
