@@ -9,6 +9,6 @@ public class Player2 extends Player1 {
 
     @Override
     public void playSong() {
-        super.playSong();
+        System.err.println("error");
     }
 }

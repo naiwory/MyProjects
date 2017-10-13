@@ -9,6 +9,8 @@ public class Player5 extends Player3 {
 
     @Override
     public void playAllSongs() {
-        super.playAllSongs();
+        for(int i = super.getPlaylist().length - 1; i < 0; i--){
+            System.out.println("Playing: " + super.getPlaylist()[i]);
+        }
     }
 }
