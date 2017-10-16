@@ -16,11 +16,11 @@ public class FXMain extends Application {
 
         Pane root = new Pane();
 
-        SnowmanConsole sc = new SnowmanConsole();
+        /*SnowmanConsole sc = new SnowmanConsole();
         sc.console();
         sc.drawSnowman(root);
         sc.buttonR(root, sc.drawSnowman(root));
-        sc.buttonG(root, sc.drawSnowman(root));
+        sc.buttonG(root, sc.drawSnowman(root));*/
 
         SnowmanButton sb = new SnowmanButton();
         sb.drawSnowman(root);
