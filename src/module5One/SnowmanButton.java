@@ -32,21 +32,29 @@ public class SnowmanButton {
 
     public Circle[] drawSnowman(Pane root){
 
-    Circle[] snowman = new Circle[n];
+        Circle[] snowman = new Circle[n];
 
         for(int i = 0; i < snowman.length; i++) {
         snowman[i] = new Circle(250, (snowman[i - 1].getRadius() * 2) + (snowman[i].getRadius()),
                 min + Math.random() * (max - min), Color.TRANSPARENT);
         snowman[i].setStroke(random());
     }
-    Circle[] snowmanHead = new Circle[3];
-        for(int i = 0; i < 3; i++){
-            snowmanHead[i] = new Circle(2, 2, 2);
-            snowmanHead[i].setStroke(random());
-        }
         root.getChildren().addAll(snowman);
         return snowman;
 }
+
+    public Circle[] drawSnowmanHead(Pane root) {
+
+        Circle[] snowmanHead = new Circle[3];
+
+        for (int i = 0; i < 3; i++) {
+            snowmanHead[i] = new Circle(2, 2, 2, Color.TRANSPARENT);
+            snowmanHead[i].setStroke(random());
+        }
+        root.getChildren().addAll(snowmanHead);
+        return snowmanHead;
+    }
+
 
     public void initButtons(Pane root){
         TextField tf = new TextField("Введите количество кругов");
@@ -89,7 +97,7 @@ public class SnowmanButton {
                     snowman[i].setFill(Paint.valueOf("#FF0000"));
                     snowman[i].setStroke(Paint.valueOf("#FF0000"));
                 }
-                root.getChildren().addAll(buttonR);
+                root.getChildren().add(buttonR);
             }
         });
     }
@@ -115,7 +123,7 @@ public class SnowmanButton {
 
                 for(int i = 0; i < snowman.length; i++)
                 snowman[i].setStroke(gradient);
-                root.getChildren().addAll(buttonG);
+                root.getChildren().add(buttonG);
             }
         });
     }

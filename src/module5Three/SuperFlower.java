@@ -1,21 +1,21 @@
 package module5Three;
 
 public abstract class SuperFlower {
-    protected double price;
+    protected int price;
 
     public SuperFlower(){
 
     }
 
-    public SuperFlower(double price) {
+    public SuperFlower(int price) {
         this.price = price;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 }

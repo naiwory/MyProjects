@@ -6,7 +6,7 @@ public class Tulip extends SuperFlower {
         price = 45;
     }
 
-    public Tulip(double price) {
+    public Tulip(int price) {
         super(price);
     }
 }

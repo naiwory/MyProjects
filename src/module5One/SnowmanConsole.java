@@ -35,7 +35,7 @@ public class SnowmanConsole{
         int max = sc.nextInt();
     }
 
-    public Circle[] drawSnowman(Pane root){
+    public void drawSnowman(Pane root){
 
         Circle[] snowman = new Circle[n];
 
@@ -46,11 +46,11 @@ public class SnowmanConsole{
         }
         Circle[] snowmanHead = new Circle[3];
         for(int i = 0; i < 3; i++){
-            snowmanHead[i] = new Circle(2, 2, 2);
+            snowmanHead[i] = new Circle(2, 2, 1 + Math.random() * (5 - 1), Color.TRANSPARENT);
             snowmanHead[i].setStroke(SnowmanButton.random());
         }
         root.getChildren().addAll(snowman);
-        return snowman;
+        root.getChildren().addAll(snowmanHead);
     }
 
     public void buttonR(Pane root, Circle[] snowman) {
@@ -64,7 +64,7 @@ public class SnowmanConsole{
                     snowman[i].setFill(Paint.valueOf("#FF0000"));
                     snowman[i].setStroke(Paint.valueOf("#FF0000"));
                 }
-                root.getChildren().addAll(buttonR);
+                root.getChildren().add(buttonR);
             }
         });
     }
@@ -90,7 +90,7 @@ public class SnowmanConsole{
 
                 for(int i = 0; i < snowman.length; i++)
                     snowman[i].setStroke(gradient);
-                root.getChildren().addAll(buttonG);
+                root.getChildren().add(buttonG);
             }
         });
     }

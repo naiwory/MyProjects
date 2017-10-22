@@ -6,7 +6,7 @@ public class Daisy extends SuperFlower{
         price = 70;
     }
 
-    public Daisy(double price) {
+    public Daisy(int price) {
         super(price);
     }
 }
