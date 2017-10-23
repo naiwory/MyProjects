@@ -9,17 +9,17 @@ public class FlowersSaver {
         try {
             FileWriter fw = new FileWriter(path);
             for(SuperFlower flower : flowers) {
-                if (flower instanceof Rose) {
-                    Rose rose = (Rose) flower;
+                if(flower instanceof Rose){
+                    Rose rose = (Rose)flower;
                     fw.write(rose.getPrice());
                 }
-                if (flower instanceof Daisy){
-                    Daisy daisy = (Daisy) flower;
-                    fw.write(daisy.getPrice());
-                }
-                if (flower instanceof Tulip) {
-                    Tulip tulip = (Tulip) flower;
+                if(flower instanceof Tulip){
+                    Tulip tulip = (Tulip)flower;
                     fw.write(tulip.getPrice());
+                }
+                if(flower instanceof Daisy){
+                    Daisy daisy = (Daisy)flower;
+                    fw.write(daisy.getPrice());
                 }
             }
             fw.flush();
