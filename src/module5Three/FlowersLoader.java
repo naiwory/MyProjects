@@ -1,41 +1,36 @@
 package module5Three;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.*;
 
 public class FlowersLoader {
 
-    public static SuperFlower[] load(String path) {
-        SuperFlower[] flowers = new SuperFlower[]{};
-        String fileName = "Flowers.txt";
-        Scanner inputStream = null;
+    private static final String SEPARATOR = ";";
 
+    public static SuperFlower[] load(String path) {
         try {
-            inputStream = new Scanner(new File(fileName));
-        } catch (FileNotFoundException e) {
-            System.out.println("error");
-            System.exit(0);
+            BufferedReader br = new BufferedReader(new FileReader(path));
+
+            int count = Integer.parseInt(br.readLine());
+            SuperFlower[] flowers = new SuperFlower[count];
+
+            for(int i = 0; i < flowers.length; i++){
+                String line = br.readLine();
+                String[] data = line.split(SEPARATOR);
+
+                if(data[0].equals(Rose.class.getSimpleName())){
+                    flowers[i] = new Rose(Integer.parseInt(data[1]));
+                }
+                if(data[0].equals(Tulip.class.getSimpleName())){
+                    flowers[i] = new Tulip(Integer.parseInt(data[1]));
+                }
+                if(data[0].equals(Daisy.class.getSimpleName())){
+                    flowers[i] = new Daisy(Integer.parseInt(data[1]));
+                }
+            }
+            return flowers;
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        int i = 0;
-        while (inputStream.hasNextLine()) {
-            int price = inputStream.nextInt();
-            if(price == 100) {
-                flowers[i] = new Rose(price);
-                i++;
-            }
-            if(price == 70) {
-                flowers[i] = new Daisy(price);
-                i++;
-            }
-            if(price == 45) {
-                flowers[i] = new Tulip(price);
-                i++;
-            }
-            else
-                return null;
-        }
-        inputStream.close();
-        return flowers;
+        return null;
     }
 }
