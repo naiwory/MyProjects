@@ -9,7 +9,7 @@ public class FlowerStore {
     Daisy daisy = new Daisy();
 
     public SuperFlower[] sell(int roseQuantity, int tulipQuantity, int daisyQuantity){
-        SuperFlower[] flowers = new SuperFlower[]{};
+        SuperFlower[] flowers = new SuperFlower[roseQuantity + tulipQuantity + daisyQuantity];
         for(int i = 0; i < roseQuantity; i++){
             flowers[i] = new Rose();
         }
@@ -24,7 +24,7 @@ public class FlowerStore {
     }
 
     public SuperFlower[] sellSequence(int roseQuantity, int tulipQuantity, int daisyQuantity){
-        SuperFlower[] flowers = new SuperFlower[]{};
+        SuperFlower[] flowers = new SuperFlower[roseQuantity + tulipQuantity + daisyQuantity];
         for(int i = 0; i < roseQuantity; i++){
             flowers[i] = new Rose(100);
             for(int j = 0; i < daisyQuantity; j++){
