@@ -1,4 +1,4 @@
-package module5Three.Practice;
+package module5Three.practice;
 
 public class HourPayment extends SuperEmployee{
 

@@ -1,4 +1,4 @@
-package module5Three;
+package module5Three.homework.flowers;
 
 public abstract class SuperFlower {
     protected int price;

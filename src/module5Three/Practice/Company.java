@@ -1,4 +1,4 @@
-package module5Three.Practice;
+package module5Three.practice;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

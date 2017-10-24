@@ -1,4 +1,9 @@
-package module5Three;
+package module5Three.homework;
+
+import module5Three.homework.flowers.Daisy;
+import module5Three.homework.flowers.Rose;
+import module5Three.homework.flowers.SuperFlower;
+import module5Three.homework.flowers.Tulip;
 
 import java.io.*;
 
