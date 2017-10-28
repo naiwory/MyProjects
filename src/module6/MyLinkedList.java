@@ -3,8 +3,8 @@ package module6;
 public class MyLinkedList<T> {
 
     private int size;
-    MyNode<T> first;
-    MyNode<T> last;
+    private MyNode<T> first;
+    private MyNode<T> last;
 
     public MyLinkedList(){
         size = Integer.MAX_VALUE;
@@ -22,7 +22,12 @@ public class MyLinkedList<T> {
     }
 
     public void remove(int index){
-
+        for(int i = 0; i < size; i++){
+            if(last.count == index) {
+                last = null;
+                size--;
+            }
+        }
     }
 
     public void clear(){
@@ -42,11 +47,16 @@ public class MyLinkedList<T> {
     }
 
     public MyNode<T> get(int index){
+        for(int i = 0; i < size; i++){
+            if(last.count == index)
+                return last;
+        }
         return null;
     }
 
 
     private static class MyNode<E> {
+        int count = 0;
         E item;
         MyNode<E> next;
         MyNode<E> prev;
@@ -55,6 +65,7 @@ public class MyLinkedList<T> {
             this.item = element;
             this.next = next;
             this.prev = prev;
+            count++;
         }
     }
 }

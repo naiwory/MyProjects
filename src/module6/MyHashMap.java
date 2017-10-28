@@ -3,8 +3,8 @@ package module6;
 public class MyHashMap<T, K> {
 
     private int size;
-    MyNode<T,K> first;
-    MyNode<T,K> last;
+    private MyNode<T,K> first;
+    private MyNode<T,K> last;
 
     public MyHashMap(){
         size = Integer.MAX_VALUE;
@@ -54,6 +54,7 @@ public class MyHashMap<T, K> {
     }
 
     private static class MyNode<T, K> {
+        int count = 0;
         T key;
         K element;
         MyNode<T, K> next;
@@ -64,6 +65,7 @@ public class MyHashMap<T, K> {
             this.key = key;
             this.element = element;
             this.next = next;
+            count++;
         }
     }
 }

@@ -3,8 +3,8 @@ package module6;
 public class MyStackNode<T> {
 
     private int size;
-    MyNode<T> first;
-    MyNode<T> last;
+    private MyNode<T> first;
+    private MyNode<T> last;
 
     public MyStackNode(){
         size = Integer.MAX_VALUE;
@@ -54,6 +54,7 @@ public class MyStackNode<T> {
     }
 
     private static class MyNode<E> {
+        int count = 0;
         E item;
         MyNode<E> next;
         MyNode<E> prev;
@@ -62,6 +63,7 @@ public class MyStackNode<T> {
             this.item = element;
             this.next = next;
             this.prev = prev;
+            count++;
         }
     }
 }
