@@ -18,6 +18,8 @@ public class MyLinkedList<T> {
 
     public void add(T value){
         last = (MyNode<T>) value;
+        last.prev = first;
+        last.next = null;
         size++;
     }
 

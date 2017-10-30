@@ -18,6 +18,8 @@ public class MyStackNode<T> {
 
     public void push(T value){
         last = (MyNode<T>) value;
+        last.prev = first;
+        last.next = null;
         size++;
     }
 

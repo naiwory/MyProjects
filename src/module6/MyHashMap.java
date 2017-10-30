@@ -19,6 +19,7 @@ public class MyHashMap<T, K> {
     public void put(T key, K value){
         last = (MyNode<T, K>) key;
         last = (MyNode<T, K>) value;
+        last.next = null;
         size++;
     }
 
