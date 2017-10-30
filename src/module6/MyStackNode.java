@@ -22,7 +22,12 @@ public class MyStackNode<T> {
     }
 
     public void remove(int index){
-
+        for(int i = 0; i < size; i++){
+            if(last.count == index) {
+                last = null;
+                size--;
+            }
+        }
     }
 
     public void clear(){

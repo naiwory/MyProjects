@@ -24,9 +24,8 @@ public class MyHashMap<T, K> {
 
     public void remove(T key){
         MyNode<T, K>  node = new MyNode();
-        if(node.key == key) {
+        if(node.key == key)
             node = null;
-        }
         size--;
     }
 
@@ -59,7 +58,9 @@ public class MyHashMap<T, K> {
         K element;
         MyNode<T, K> next;
 
-        MyNode(){}
+        MyNode(){
+            count++;
+        }
 
         MyNode(T key, K element, MyNode<T, K> next) {
             this.key = key;
