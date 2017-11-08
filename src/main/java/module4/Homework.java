@@ -1,6 +1,6 @@
 package module4;
 
-public class Main {
+public class Homework {
 
     //Задание 1
 

@@ -1,6 +1,6 @@
 package module5.carInformation.Practice;
 
-public class Main {
+public class CircleMain {
     public static void main(String[] args) {
         Point point = new Point(8.0, 5.7);
         Point point1 = new Point(9.6, 7.5);
