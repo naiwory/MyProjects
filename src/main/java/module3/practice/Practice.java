@@ -1,81 +1,92 @@
-
-package practice;
+package module3.practice;
 
 import java.util.Scanner;
 
 public class Practice {
-
-        public static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        
-        System.out.println("Введите первое число:");
+
+        //Задача 1
+
+        System.out.println("Введите первое число: ");
         int a = sc.nextInt();
-        System.out.println("Введите второе число:");
+        System.out.println("Введите второе число: ");
         int b = sc.nextInt();
-        System.out.println("Введите третье число:");
-        int c = sc.nextInt();
-        
-        System.out.println("Введите первое число:");
-        int y = sc.nextInt();
-        System.out.println("Введите второе число:");
-        int x = sc.nextInt();
-        
-        System.out.println("Введите первое дробное число:");
-        double z = sc.nextDouble();
-        System.out.println("Введите второе дробное число:");
-        double d = sc.nextDouble();
-        
-        //Задание 1
-        
-        System.out.println(z + " + " + d + " = " + (z + d));
-        
-        //Задание 2
-        
-        System.out.println("Площадь прямоугольника: " + a * b);
-        
-        //Задание 3
-        
-        int p = a + b + c;
-        System.out.println("Площадь треугольника: " + Math.sqrt(p * (p - a) * (p - b) * (p - c)));
-        
-        //Задание 4
-        
-        System.out.println("y + x: " + (y == x));
-        System.out.println("y делится без остатка на x: " + (y % x == 0));
-        System.out.println("y > x: " + (y > x));
-        
-        //Задание 5
-        
-        System.out.println("a больше c и b: " + (c < a && a > b));
-        System.out.println("b больше a и c: " + (c < b && b > a));
-        System.out.println("c больше a и b: " + (b < c && c > a));
-        
-        System.out.println("a меньше c и b: " + (c > a && a < b));
-        System.out.println("b меньше a и c: " + (c > b && b < a));
-        System.out.println("c меньше a и b: " + (b > c && c < a));
-        
-        System.out.println("a промежуточное число между c и b: " + (c < a && a < b || b < a && a < c));
-        System.out.println("b промежуточное число между a и c: " + (c < b && b < a || a < b && b < c));
-        System.out.println("c промежуточное число между a и b: " + (b < c && c < a || a < c && c < b));
-        
-        //Задание 6
-        
-        System.out.println("a равняется хотя бы одному числу: " + (c == a || a == b));
-        System.out.println("b равняется хотя бы одному числу: " + (c == b || b == a));
-        System.out.println("c равняется хотя бы одному числу: " + (b == c || c == a));
-        
-        System.out.println("a больше хотя бы одного числа: " + (c < a || a > b));
-        System.out.println("b больше хотя бы одного числа: " + (c < b || b > a));
-        System.out.println("c больше хотя бы одного числа: " + (b < c || c > a));
-        
-        
-        
-}
+
+        String s = String.valueOf(a);
+        String s1 = String.valueOf(b);
+
+        String x = new StringBuffer(s).reverse().toString();
+        String x1 = new StringBuffer(s1).reverse().toString();
+
+        a = Integer.parseInt(x);
+        b = Integer.parseInt(x1);
+
+        System.out.println(a);
+        System.out.println(b);
+
+        //Задача 2
+
+        System.out.println("Введите размер массива:");
+        int n = sc.nextInt();
+        int[] array = new int[n];
+
+        System.out.println("Заполните массив:");
+        for(int i = 0; i < n; i++){
+            System.out.print("Индекс номер " + i + ": ");
+            array[i] = sc.nextInt();
+        }
+
+        System.out.println("Введите размер массива:");
+        int n1 = sc.nextInt();
+        int[] array1 = new int[n1];
+
+        System.out.println("Заполните массив:");
+        for(int i = 0; i < n1; i++){
+            System.out.print("Индекс номер " + i + ": ");
+            array1[i] = sc.nextInt();
+        }
+
+        for(int i = array.length - 1; i >= 0; i--){
+            System.out.println(array[i]);
+        }
+
+        //Задача 3
+
+        int[] array2;
+        if(array.length > array1.length){
+            array2 = new int[array1.length];
+        } else if(array.length <= array1.length){
+            array2 = new int[array.length];
+        }
+
+        for(int i = 0; i < array.length; i++){
+            for(int j = 0; j < array1.length; j++){
+                if(array[i] == 0){
+                    break;
+                }if(array1[j] == 0){
+                    break;
+                }
+                array[i] += array1[j];
+            }
+        }
+
+        for(int arr : array){
+            System.out.println(arr);
+        }
+
+        //Задача 4
+
+        for (int j = 0; j < array.length; j++)
+            for (int k = 0; k < array.length - 1; k++) {
+                if (array[k] < array[k + 1]) {
+                    int temp = array[k];
+                    array[k] = array[k + 1];
+                    array[k + 1] = temp;
+                }
+            }
+        for(int arr : array){
+            System.out.println(arr);
+        }
     }
-        
-        
-
-    
-    
-    
-
+}

@@ -7,12 +7,13 @@ public class Student {
     private String studentName;
     private int course;
 
-    public static void printStudents(List <Student> students, int course){
+    public static void printStudents(List <Student> students, int course) {
         Iterator<Student> i = students.iterator();
-        if(i.hasNext()){
-            if(i.next().course == course)
+        if (i.hasNext()) {
+            if (i.next().course == course)
                 System.out.println(i.next().course + i.next().studentName);
 
+        }
     }
 
     public Student(String studentName, int course) {
