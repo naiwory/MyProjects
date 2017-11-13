@@ -1,4 +1,4 @@
-package stores;
+package module7.practice.stores;
 
 public class TechProduct extends SuperProduct{
     private String description;

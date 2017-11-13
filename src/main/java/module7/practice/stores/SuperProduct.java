@@ -1,4 +1,4 @@
-package stores;
+package module7.practice.stores;
 
 public abstract class SuperProduct {
     protected String name;

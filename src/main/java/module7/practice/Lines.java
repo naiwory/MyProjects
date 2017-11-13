@@ -1,3 +1,5 @@
+package module7.practice;
+
 import java.util.ArrayList;
 
 public class Lines {

@@ -1,7 +1,12 @@
 package module7.homework;
 
+import com.alibaba.fastjson.JSON;
+
+import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Company {
 
@@ -17,12 +22,19 @@ public class Company {
         this.stores = stores;
     }
 
-    public void save(String pathToJsonFile){
-
+    public void save(String pathToJsonFile) throws Exception{
+        String json = JSON.toJSONString(stores);
+        FileWriter fw = new FileWriter(pathToJsonFile);
+        fw.write(json);
+        fw.flush();
+        fw.close();
     }
 
-    public void load(String pathToJsonFile){
-
+    public void load(String pathToJsonFile) throws Exception{
+        stores = null;
+        String json = new Scanner(new File(pathToJsonFile)).useDelimiter("\\Z").next();
+        for(FruitStore store : stores)
+            store = JSON.parseObject(json, FruitStore.class);
     }
 
     public FruitStore getFruitStore(int index){

@@ -1,7 +1,6 @@
 package module5Two.practice;
 
 import module5Two.practice.components.*;
-import module5Two.practice.products.components.*;
 
 public class Store {
     protected double purse;

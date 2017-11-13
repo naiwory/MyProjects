@@ -1,4 +1,4 @@
-package stores;
+package module7.practice.stores;
 
 public class AnimalProduct extends SuperProduct {
     private int age;
