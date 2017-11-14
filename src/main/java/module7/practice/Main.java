@@ -37,7 +37,7 @@ public class Main {
         line.add("Third string");
         line.add("Fourth string");
         line.add("Fifth string");
-        readAndLoadLines("files/lines.txt", line);
+        readAndLoadLines("files/practice7/lines.txt", line);
 
     }
 }

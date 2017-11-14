@@ -57,7 +57,7 @@ public class Numbers {
 
         Thread threadSum = new Thread(() -> {
             try {
-                executeSum(read("files/10 000 000 Numbers.txt"));
+                executeSum(read("files/practice8/10 000 000 Numbers.txt"));
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -67,7 +67,7 @@ public class Numbers {
 
         Thread threadMultiply = new Thread(() -> {
             try {
-                executeMultiply(read("files/10 000 000 Numbers.txt"));
+                executeMultiply(read("files/practice8/10 000 000 Numbers.txt"));
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -77,7 +77,7 @@ public class Numbers {
 
         Thread threadDivide = new Thread(() -> {
             try {
-                executeDivide(read("files/10 000 000 Numbers.txt"));
+                executeDivide(read("files/practice8/10 000 000 Numbers.txt"));
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -87,7 +87,7 @@ public class Numbers {
 
         Thread threadMinus = new Thread(() -> {
             try {
-                executeMinus(read("files/10 000 000 Numbers.txt"));
+                executeMinus(read("files/practice8/10 000 000 Numbers.txt"));
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -95,10 +95,10 @@ public class Numbers {
 
         System.out.println("" + calendar.get(Calendar.MINUTE) + "\t:\t" + calendar.get(Calendar.SECOND));
 
-        System.out.println(executeSum(read("files/10 000 000 Numbers.txt")));
-        System.out.println(executeMultiply(read("files/10 000 000 Numbers.txt")));
-        System.out.println(executeDivide(read("files/10 000 000 Numbers.txt")));
-        System.out.println(executeMinus(read("files/10 000 000 Numbers.txt")));
+        System.out.println(executeSum(read("files/practice8/10 000 000 Numbers.txt")));
+        System.out.println(executeMultiply(read("files/practice8/10 000 000 Numbers.txt")));
+        System.out.println(executeDivide(read("files/practice8/10 000 000 Numbers.txt")));
+        System.out.println(executeMinus(read("files/practice8/10 000 000 Numbers.txt")));
 
     }
 }

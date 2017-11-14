@@ -1,0 +1,1 @@
+[{"dateOfIncome":"13.11.2017","fruit":"strawberry","price":25.5,"shelfLife":5},{"dateOfIncome":"13.11.2017","fruit":"lemon","price":12.3,"shelfLife":10},{"dateOfIncome":"13.11.2017","fruit":"peach","price":43.9,"shelfLife":8},{"dateOfIncome":"13.11.2017","fruit":"cloudberry","price":34.7,"shelfLife":13},{"dateOfIncome":"13.11.2017","fruit":"watermelon","price":5.6,"shelfLife":7}]

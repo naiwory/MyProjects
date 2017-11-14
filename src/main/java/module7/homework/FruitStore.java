@@ -25,7 +25,7 @@ public class FruitStore {
 
     public void addFruits(String pathToJsonFile) throws Exception{
         String json = new Scanner(new File(pathToJsonFile)).useDelimiter("\\Z").next();
-
+        fruits = JSON.parseObject(json, ArrayList.class);
     }
 
     public void save(String pathToJsonFile) throws Exception{
@@ -40,12 +40,14 @@ public class FruitStore {
     public void load(String pathToJsonFile) throws Exception{
         fruits = null;
         String json = new Scanner(new File(pathToJsonFile)).useDelimiter("\\Z").next();
-
-        for(Fruit fruit : fruits)
-        fruit = JSON.parseObject(json, Fruit.class);
+        fruits = JSON.parseObject(json, ArrayList.class);
     }
 
     public ArrayList<Fruit> getSpoiledFruits(Date date){
+        return null;
+    }
+
+    public ArrayList<Fruit> getSpoiledFruits(Date date, Fruit.FruitType fruit){
         return null;
     }
 
@@ -53,11 +55,22 @@ public class FruitStore {
         return null;
     }
 
+    public ArrayList<Fruit> getAvailableFruits(Date date, Fruit.FruitType fruit){
+        return null;
+    }
+
+    public ArrayList<Fruit> getAddedFruits(Date date){
+        return null;
+    }
+
+    public ArrayList<Fruit> getAddedFruits(Date date, Fruit.FruitType fruit){
+        return null;
+    }
+
     public void sell(String pathToJsonFile) throws Exception{
         clients = null;
         String json = new Scanner(new File(pathToJsonFile)).useDelimiter("\\Z").next();
-        for(Client client : clients)
-        client = JSON.parseObject(json, Client.class);
+
     }
 
     public double getMoneyBalance() {
