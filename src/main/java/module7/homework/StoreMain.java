@@ -1,6 +1,7 @@
 package module7.homework;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 public class StoreMain {
@@ -29,5 +30,7 @@ public class StoreMain {
             System.out.println(fruit.getDateOfIncome());
             System.out.println(fruit.getPrice());
         }
+
+        Calendar cal = Calendar.getInstance();
     }
 }

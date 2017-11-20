@@ -70,6 +70,12 @@ public class FruitStore {
     public void sell(String pathToJsonFile) throws Exception{
         clients = null;
         String json = new Scanner(new File(pathToJsonFile)).useDelimiter("\\Z").next();
+        for(Client client : clients){
+            if(client.getFruit() == Fruit.FruitType.lemon){
+
+            }
+        }
+
 
     }
 
