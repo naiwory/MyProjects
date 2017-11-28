@@ -1,4 +1,4 @@
-package module5One.Practice;
+package module5One.practice;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

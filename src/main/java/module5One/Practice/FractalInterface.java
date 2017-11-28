@@ -1,4 +1,4 @@
-package module5One.Practice;
+package module5One.practice;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;

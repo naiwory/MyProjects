@@ -87,7 +87,7 @@ public class YoutubeDownloadJavaFX extends Application{
 
     }
 
-    private void generateImage(Pane content, int y, int width, ThumbnailImage image) {
+    /*private void generateImage(Pane content, int y, int width, ThumbnailImage image) {
 
         if (image == null) return;
 
@@ -111,5 +111,5 @@ public class YoutubeDownloadJavaFX extends Application{
 
         content.setPrefWidth(width + image.width);
 
-    }
+    }*/
 }
